@@ -24,7 +24,8 @@ do hours of repetitive structural work with a single sentence:
 - **Generate reinforcement (КЖ) drawings and rebar specs** from LIRA results, to СП РК / ГОСТ.
 - **Check steel connections in IDEA StatiCa** (CBFEM) — push joint forces from LIRA to an IDEA
   Unity Check, right from chat (requires IDEA StatiCa installed).
-- **Search building-code libraries** — СП РК, ГОСТ, Eurocode — without leaving your chat.
+- **Read live Revit models** via pyRevit — elements, quantities and more (requires pyRevit installed).
+- **Search your building-code library** — point it at your own СП РК / ГОСТ / Eurocode files.
 - **Read DWG / DXF and IFC files** without opening the CAD application.
 
 ### Ask it things like
