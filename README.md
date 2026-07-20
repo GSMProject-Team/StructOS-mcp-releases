@@ -11,8 +11,9 @@ query building codes (СП РК / ГОСТ / Eurocode), and read DWG / IFC files
 
 ## Get a license
 
-Register and purchase a license at **[finora.kz](https://finora.kz)**. You receive a license
-key by email. One key = one computer.
+Buy a license at the **[StructOS store](https://structos.lemonsqueezy.com)**
+([direct checkout](https://structos.lemonsqueezy.com/checkout/buy/cfe5ae70-06f1-46f5-a687-741c05aad50b)).
+You receive a license key by email. One key = one computer.
 
 ## Download & install
 
@@ -28,6 +29,6 @@ key by email. One key = one computer.
 - LIRA-SAPR 2024 · Tekla Structures 2021+ · AutoCAD (whichever you drive), installed
 - An MCP-capable AI client with your own account (the AI is not included)
 
-## Support & billing
+## Store & support
 
-[finora.kz](https://finora.kz)
+[structos.lemonsqueezy.com](https://structos.lemonsqueezy.com)
