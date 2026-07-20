@@ -22,6 +22,8 @@ do hours of repetitive structural work with a single sentence:
 - **Read a live LIRA-SAPR model** over COM — elements, sections, materials, results, and load
   combinations (РСН / РСУ).
 - **Generate reinforcement (КЖ) drawings and rebar specs** from LIRA results, to СП РК / ГОСТ.
+- **Check steel connections in IDEA StatiCa** (CBFEM) — push joint forces from LIRA to an IDEA
+  Unity Check, right from chat (requires IDEA StatiCa installed).
 - **Search building-code libraries** — СП РК, ГОСТ, Eurocode — without leaving your chat.
 - **Read DWG / DXF and IFC files** without opening the CAD application.
 
@@ -32,6 +34,8 @@ do hours of repetitive structural work with a single sentence:
 > *"Generate КЖ reinforcement drawings from the LIRA results."*
 >
 > *"What's the snow load per СП РК at 1000 m altitude?"*
+>
+> *"Check this beam-to-column joint in IDEA StatiCa and give me the Unity Check."*
 >
 > *"Read this DWG and list the column grid."*
 
