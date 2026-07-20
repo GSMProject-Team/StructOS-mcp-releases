@@ -1,34 +1,61 @@
-# StructOS — downloads & releases
+<div align="center">
 
-**AI automation for structural engineers — LIRA-SAPR · Tekla Structures · AutoCAD.**
+# StructOS
 
-StructOS connects your engineering software to an AI assistant (Claude Code, OpenAI Codex,
-or Cursor) through the MCP protocol, so you can automate repetitive structural work in plain
-language: transfer full models between LIRA-SAPR and Tekla, generate reinforcement (КЖ) drawings,
-query building codes (СП РК / ГОСТ / Eurocode), and read DWG / IFC files.
+### AI automation for structural engineers — right inside your CAD workflow
 
-> This repository hosts the **downloads only**. It contains no source code.
+**LIRA-SAPR · Tekla Structures · AutoCAD**, driven from Claude Code, OpenAI Codex, or Cursor.
 
-## Get a license
+[**⬇ Download**](../../releases/latest) · [**🛒 Buy a license**](https://structos.lemonsqueezy.com) · [Store](https://structos.lemonsqueezy.com)
 
-Buy a license at the **[StructOS store](https://structos.lemonsqueezy.com)**
-([direct checkout](https://structos.lemonsqueezy.com/checkout/buy/cfe5ae70-06f1-46f5-a687-741c05aad50b)).
-You receive a license key by email. One key = one computer.
+</div>
 
-## Download & install
+---
 
-1. Download **`StructOS-win64.zip`** from the [latest release](../../releases/latest).
-2. Unzip it, e.g. to `C:\StructOS\`.
-3. Open `StructOS/README.txt` and follow the steps to connect it to your AI client
-   (Claude Code, Codex, or Cursor) and enter your license key.
-4. Verify: run `structos-mcp.exe --checklicense` — you should see `LICENSE OK`.
+## What it does
+
+StructOS is an MCP server that plugs your engineering software into an AI assistant, so you can
+do hours of repetitive structural work with a single sentence:
+
+- **Transfer whole models between LIRA-SAPR and Tekla** — columns, beams, slabs and grids, concrete
+  *and* steel, with rolled profiles matched to the Tekla GOST catalogue.
+- **Read a live LIRA-SAPR model** over COM — elements, sections, materials, results, and load
+  combinations (РСН / РСУ).
+- **Generate reinforcement (КЖ) drawings and rebar specs** from LIRA results, to СП РК / ГОСТ.
+- **Search building-code libraries** — СП РК, ГОСТ, Eurocode — without leaving your chat.
+- **Read DWG / DXF and IFC files** without opening the CAD application.
+
+### Ask it things like
+
+> *"Read the open LIRA model and copy the whole frame into Tekla."*
+>
+> *"Generate КЖ reinforcement drawings from the LIRA results."*
+>
+> *"What's the snow load per СП РК at 1000 m altitude?"*
+>
+> *"Read this DWG and list the column grid."*
+
+## How it works
+
+1. StructOS runs on **your** Windows machine, next to LIRA-SAPR / Tekla / AutoCAD.
+2. You connect it to **your own** AI client (Claude Code, Codex, or Cursor) — you bring your own AI account.
+3. Every tool runs locally against your open CAD software. Your models never leave your computer.
+
+## Quick start
+
+1. **[Buy a license](https://structos.lemonsqueezy.com)** — you get a key by email (one key = one computer).
+2. **[Download `StructOS-win64.zip`](../../releases/latest)** and unzip it (e.g. to `C:\StructOS\`).
+3. Open `StructOS/README.txt`, add StructOS to your AI client's config, and paste your license key.
+4. Verify: run `structos-mcp.exe --checklicense` → you should see **`LICENSE OK`**.
 
 ## Requirements
 
 - Windows 10/11 (64-bit)
-- LIRA-SAPR 2024 · Tekla Structures 2021+ · AutoCAD (whichever you drive), installed
-- An MCP-capable AI client with your own account (the AI is not included)
+- LIRA-SAPR 2024 · Tekla Structures 2021+ · AutoCAD — whichever you drive, installed
+- An MCP-capable AI client with your own account (the AI is **not** included)
 
 ## Store & support
 
-[structos.lemonsqueezy.com](https://structos.lemonsqueezy.com)
+**[structos.lemonsqueezy.com](https://structos.lemonsqueezy.com)**
+
+<sub>New capabilities are added continuously. This repository hosts the downloads only — no source code.</sub>
