@@ -19,6 +19,9 @@ do hours of repetitive structural work with a single sentence:
 
 - **Transfer whole models between LIRA-SAPR and Tekla** — columns, beams, slabs and grids, concrete
   *and* steel, with rolled profiles matched to the Tekla GOST catalogue.
+- **Edit Tekla models from chat** — cut stair openings (проёмы) in slabs, build stair
+  stringer↔truss connections, railings and finials — placed correctly in the model's coordinate
+  system (requires Tekla Structures installed).
 - **Read a live LIRA-SAPR model** over COM — elements, sections, materials, results, and load
   combinations (РСН / РСУ).
 - **Generate reinforcement (КЖ) drawings and rebar specs** from LIRA results, to СП РК / ГОСТ.
