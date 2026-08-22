@@ -88,13 +88,37 @@ confidential.
 
 ## Keeping up to date
 
-StructOS does **not** update itself. New versions appear on the
-**[releases page](../../releases/latest)** — download the zip and unzip it over your existing
-install, keeping your config and licence key. Your assistant can tell you which version you are on:
+**From v0.1.5 on, StructOS updates itself.** You do not have to watch this page, and you never have
+to change your config — the path your AI client points at stays exactly the same.
+
+How it works: it checks the releases page about once a day, and when a new version is out it
+downloads the zip, checks it against the checksum published with the release, and installs it **at
+the end of a session** — the one moment nothing is running. Before the old version is removed, the
+new one has to start and report its version; if it cannot, the update is rolled back and you keep
+working on what you had.
+
+Which version you are on:
 
 ```
 structos-mcp.exe --version
 ```
+
+**If you would rather decide yourself**, two environment variables:
+
+| Variable | Effect |
+| --- | --- |
+| `STRUCTOS_AUTO_UPDATE=0` | Never install anything. New versions are only announced. |
+| `STRUCTOS_PIN_VERSION=v0.1.5` | Stay on this exact version. |
+| `STRUCTOS_NO_UPDATE_CHECK=1` | Do not contact GitHub at all. |
+
+Pinning is worth knowing about if you are running an object through expert review and the numbers
+must not move under you.
+
+**What the check sends:** one anonymous request to GitHub for the public releases page — no model
+data, no licence key, nothing identifying you or your projects. The checksum proves the download
+arrived intact. It does not prove who built it: StructOS is not code-signed, so if that matters to
+your IT policy, set `STRUCTOS_AUTO_UPDATE=0` and update by hand from the
+**[releases page](../../releases/latest)**.
 
 ## Store & support
 
