@@ -62,6 +62,40 @@ do hours of repetitive structural work with a single sentence:
 - LIRA-SAPR 2024 · Tekla Structures 2021+ · AutoCAD — whichever you drive, installed
 - An MCP-capable AI client with your own account (the AI is **not** included)
 
+## Found a bug? Or a wrong number?
+
+Both are worth reporting, and the second one especially — a tool that returns a plausible but wrong
+force, area of reinforcement or profile is the kind of thing we cannot find without you.
+
+**Easiest way — ask your assistant:**
+
+> *"Отправь баг-репорт по этой ошибке."* · *"Send a bug report for that error."*
+
+It calls `structos_report_bug`, which reads StructOS's own local log of tool calls, masks file
+paths, your user name, e-mail and licence key, and shows you the result. Nothing is sent anywhere.
+If you are happy with what you see, it opens a GitHub form with the technical fields already filled
+in and **you** press Submit.
+
+Your conversation is never read. The MCP protocol gives a server no access to it, and StructOS does
+not reach around that — the log of its own tool calls is both more useful for debugging and none of
+our business beyond that.
+
+**Or file it by hand:** **[open an issue](../../issues/new/choose)** — there is a form for a crash,
+one for a wrong engineering result, and one for a tool you wish existed.
+
+Please paste text output rather than model files, and mask project or client names if they are
+confidential.
+
+## Keeping up to date
+
+StructOS does **not** update itself. New versions appear on the
+**[releases page](../../releases/latest)** — download the zip and unzip it over your existing
+install, keeping your config and licence key. Your assistant can tell you which version you are on:
+
+```
+structos-mcp.exe --version
+```
+
 ## Store & support
 
 **[structos.lemonsqueezy.com](https://structos.lemonsqueezy.com)**

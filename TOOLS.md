@@ -2,7 +2,7 @@
 
 > Public interface of the StructOS MCP server. **Implementation is proprietary** (licensed product — see README). This manifest lists the tools the server exposes.
 
-Total tools: **246**, grouped by domain.
+Total tools: **248**, grouped by domain.
 
 
 ## lira* (94)
@@ -231,13 +231,18 @@ Total tools: **246**, grouped by domain.
 - **autocad_read_filtered**(entity_types, layers, max_entities) — Быстро прочитать из открытого DWG ТОЛЬКО указанные типы объектов (фильтр SelectionSet)
 - **autocad_read_levels**() — Прочитать ВСЕ TEXT/MTEXT из открытого чертежа в сыром виде — {text, x, y, z}. Без фильтрации.
 
-## structos* (8)
+## structos* (10)
 - **structos_clear_tasks**() — KK: Аяқталған (done/failed) тапсырмаларды тазалау (running қалады). RU: Очистить завершённые задачи.
 - **structos_get_tasks**(limit) — KK: Фондық тапсырмалар тізімін қайтару (running/done/failed) — UI панелі үшін. RU: Список фоновых
 - **structos_intent**(text) — Классифицировать команду на естественном языке в intent StructOS (сначала regex, при неуверенности
 - **structos_model_diff**(source_a, source_b, ifc_path_a, ifc_path_b) — Сравнить две модели (по типам, совпавшие/несовпавшие элементы). EN: Diff two models (counts by
 - **structos_read_model**(source, ifc_path) — KK: StructOS біртұтас объект моделін оқу — 'lira'|'tekla'|'ifc' көзінен bars+nodes (мм) моделін
 - **structos_run_pipeline**(description, to_tekla, build, dwg_path, floors, height, material) — Полный пайплайн: (чертёж АР DWG/DXF или ЕЯ) → LIRA → Tekla КМ → AutoCAD КЖ. dwg_path строит из сетки осей.
+- **structos_active_models**() — One view across LIRA / Tekla / Revit / AutoCAD: what is open, which model THIS chat is
+  pinned to, and which other StructOS sessions are live in the same application. Read-only.
+- **structos_report_bug**(tool_name, expected, steps, cad, last_n, include_params, confirm) — Build a bug report from the LOCAL
+  log of tool calls. Paths, user name, e-mail and licence key are masked. confirm=False (default) SENDS NOTHING and only shows
+  what would be sent; confirm=True opens a prefilled GitHub form and a human presses Submit. Your conversation is never read.
 - **structos_status**() — Проверить, какие программы (LIRA/Tekla/AutoCAD/Revit) сейчас запущены + здоровье мостов.
 - **structos_sync_model**(source, target, dry_run, ifc_path) — Сопоставить модели двух программ по геометрии, вернуть % совпадения и связь ID.
 
