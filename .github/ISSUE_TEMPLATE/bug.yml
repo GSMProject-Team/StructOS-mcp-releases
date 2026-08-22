@@ -1,0 +1,125 @@
+name: "🐞 Bug report / Ошибка"
+description: "A StructOS tool failed, or returned a wrong result. / Инструмент StructOS упал или вернул неверный результат."
+title: "[bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before you start / Перед началом**
+
+        Your models never leave your computer — and they should not leave it in this issue either.
+        Please paste **text output only**, not model files. Rename or mask client and project names
+        if they are confidential.
+
+        *Ваши модели не покидают ваш компьютер — не прикладывайте их и сюда. Вставляйте только
+        текстовый вывод. Названия объектов и заказчиков при необходимости замените.*
+
+  - type: input
+    id: version
+    attributes:
+      label: "StructOS version / Версия"
+      description: "Run `structos-mcp.exe --version`, or give the release tag you downloaded."
+      placeholder: "v0.1.2"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: client
+    attributes:
+      label: "AI client / AI-клиент"
+      options:
+        - Claude Code
+        - OpenAI Codex
+        - Cursor
+        - Other / Другой
+    validations:
+      required: true
+
+  - type: input
+    id: tool
+    attributes:
+      label: "Tool name / Имя инструмента"
+      description: "The exact StructOS tool that misbehaved — one tool per issue."
+      placeholder: "lira_read_bar_forces"
+    validations:
+      required: true
+
+  - type: input
+    id: cad
+    attributes:
+      label: "CAD software + version / САПР и версия"
+      description: "Which application the tool was talking to, with its exact build."
+      placeholder: "LIRA-SAPR 2022 R1.1 / Tekla Structures 2021.0 / AutoCAD 2025 / Revit 2025"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: "What the tool returned / Что вернул инструмент"
+      description: "Paste the tool result verbatim — including the `error` code and `message`."
+      render: json
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "What you expected / Что вы ожидали"
+      description: "If the result was wrong rather than an error, say what the correct value is and how you know it."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce / Как повторить"
+      description: "What you asked the AI, and what state the model was in."
+      placeholder: |
+        1. Opened the model in LIRA
+        2. Asked: "..."
+        3. The assistant called lira_read_bar_forces(element=...)
+    validations:
+      required: true
+
+  - type: textarea
+    id: audit
+    attributes:
+      label: "Audit log excerpt / Выдержка из журнала"
+      description: |
+        StructOS records every tool call locally. Paste the last few lines that cover the failure.
+
+        PowerShell: `Get-Content "$HOME\.structos-agent\mcp_audit.jsonl" -Tail 20`
+
+        This file holds tool names, arguments, error codes and stack traces — **review it before
+        pasting** and mask anything confidential, since file paths often carry project names.
+
+        *StructOS записывает каждый вызов локально. Вставьте последние строки, покрывающие сбой.
+        Проверьте их перед вставкой: в путях часто встречаются названия объектов.*
+      render: json
+    validations:
+      required: false
+
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: "Does it happen every time? / Повторяется ли?"
+      options:
+        - "Every time / Каждый раз"
+        - "Sometimes / Иногда"
+        - "Happened once / Один раз"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Checks / Проверки"
+      description: "These rule out the most common false alarms."
+      options:
+        - label: "`structos-mcp.exe --checklicense` prints **LICENSE OK** / выводит LICENSE OK"
+        - label: "For a tool that writes or computes, the matching gate variable is set — `STRUCTOS_LIRA_ENABLE_WRITE`, `STRUCTOS_LIRA_ENABLE_COMPUTE`, `STRUCTOS_TEKLA_ENABLE_WRITE`, `STRUCTOS_REVIT_ENABLE_WRITE`, `STRUCTOS_AUTOCAD_ENABLE_*` / переменная-гейт установлена"
+        - label: "The CAD application was open and the model loaded when the tool ran / приложение было открыто, модель загружена"
+        - label: "With several models open, the target was pinned first (`lira_use_document` / `tekla_use_model` / `revit_use_document`) / при нескольких открытых моделях цель была закреплена"
+        - label: "An empty result is not the same as a passing check — I confirmed the underlying analysis had actually been run / пустой результат не означает «всё прошло»: расчёт действительно был выполнен"

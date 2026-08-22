@@ -1,0 +1,35 @@
+name: "💡 Tool request / Запрос инструмента"
+description: "A workflow you want StructOS to automate. / Задача, которую StructOS должен уметь автоматизировать."
+title: "[request] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: "The workflow today / Как вы делаете это сейчас"
+      description: "The manual steps you go through, and roughly how long they take."
+    validations:
+      required: true
+
+  - type: textarea
+    id: want
+    attributes:
+      label: "What you would ask the assistant / Что вы хотели бы попросить у ассистента"
+      placeholder: "Подбери базы колонн по усилиям из ЛИРА и построй их в Tekla."
+    validations:
+      required: true
+
+  - type: input
+    id: apps
+    attributes:
+      label: "Software involved / Задействованные программы"
+      placeholder: "LIRA-SAPR 2022 → Tekla 2021"
+    validations:
+      required: true
+
+  - type: input
+    id: frequency
+    attributes:
+      label: "How often / Как часто"
+      description: "How many times a month this comes up in your work."
+      placeholder: "2-3 раза в месяц"
