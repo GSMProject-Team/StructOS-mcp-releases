@@ -1,0 +1,85 @@
+name: "📐 Wrong engineering result / Неверный результат"
+description: "The tool ran fine, but the number, profile or drawing it produced is wrong. / Инструмент отработал, но выдал неверное число, профиль или чертёж."
+title: "[wrong-result] "
+labels: ["wrong-result", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when nothing crashed but the **engineering answer** is wrong — a force, an area of
+        reinforcement, a chosen profile, a dimension on a drawing. These are the most valuable
+        reports we get, and the ones we cannot find without you.
+
+        *Используйте, когда сбоя нет, но неверен сам инженерный ответ — усилие, площадь арматуры,
+        подобранный профиль, размер на чертеже.*
+
+  - type: input
+    id: version
+    attributes:
+      label: "StructOS version / Версия"
+      placeholder: "v0.1.2"
+    validations:
+      required: true
+
+  - type: input
+    id: tool
+    attributes:
+      label: "Tool name / Имя инструмента"
+      placeholder: "lira_read_arm_results"
+    validations:
+      required: true
+
+  - type: textarea
+    id: got
+    attributes:
+      label: "The value StructOS gave / Что выдал StructOS"
+      description: "Paste the result, with units."
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct
+    attributes:
+      label: "The correct value / Верное значение"
+      description: "With units."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source
+    attributes:
+      label: "How do you know it is correct? / Откуда известно верное значение?"
+      options:
+        - "Hand calculation / Ручной расчёт"
+        - "Report from the CAD or FEA program itself / Отчёт самой программы"
+        - "Another program / Другая программа"
+        - "Approved drawing or project documentation / Утверждённый чертёж или проект"
+        - "Code clause / Пункт норматива"
+    validations:
+      required: true
+
+  - type: input
+    id: clause
+    attributes:
+      label: "Code clause, if applicable / Пункт норматива"
+      description: "Document and clause number — this is what the fix gets checked against."
+      placeholder: "СП РК EN 1992-1-1, 6.4.5 / ГОСТ 26020-83"
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Element and conditions / Элемент и условия"
+      description: "Section, material, span, load case or combination — enough for us to rebuild the case."
+      placeholder: |
+        Column 500x500, B25, storey height 4.5 m
+        Combination: 1.35G + 1.5Q
+        Element ids: ...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Checks / Проверки"
+      options:
+        - label: "I took into account that some values are **chosen by StructOS** rather than read from the analysis — rebar diameter and spacing, for example, are picked from the required area, they do not come from the FEA program / я учёл, что часть значений StructOS подбирает сам, а не читает из расчёта"

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "🔑 License, payment or download problem"
+    url: "https://structos.lemonsqueezy.com"
+    about: "Licence keys, invoices and downloads are handled by the store, not by this tracker."
+  - name: "📖 Tool reference"
+    url: "https://github.com/GSMProject-Team/StructOS-mcp-releases/blob/main/TOOLS.md"
+    about: "Check what a tool is meant to do before reporting it as broken."
