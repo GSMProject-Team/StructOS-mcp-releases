@@ -6,7 +6,7 @@
 
 **LIRA-SAPR · Tekla Structures · AutoCAD**, driven from Claude Code, OpenAI Codex, or Cursor.
 
-[**⬇ Download**](../../releases/latest) · [**🛒 Buy a license**](https://structos.lemonsqueezy.com) · [Store](https://structos.lemonsqueezy.com)
+[**⬇ Download**](../../releases/latest) — free during beta, no license key needed
 
 </div>
 
@@ -51,10 +51,11 @@ do hours of repetitive structural work with a single sentence:
 
 ## Quick start
 
-1. **[Buy a license](https://structos.lemonsqueezy.com)** — you get a key by email (one key = one computer).
-2. **[Download `StructOS-win64.zip`](../../releases/latest)** and unzip it (e.g. to `C:\StructOS\`).
-3. Open `StructOS/README.txt`, add StructOS to your AI client's config, and paste your license key.
-4. Verify: run `structos-mcp.exe --checklicense` → you should see **`LICENSE OK`**.
+Free during beta — no license key needed.
+
+1. **[Download `StructOS-win64.zip`](../../releases/latest)** and unzip it (e.g. to `C:\StructOS\`).
+2. Open `StructOS/README.txt` and add StructOS to your AI client's config.
+3. Start your AI client and ask it to do something with your CAD software.
 
 ## Requirements
 
@@ -120,8 +121,9 @@ arrived intact. It does not prove who built it: StructOS is not code-signed, so 
 your IT policy, set `STRUCTOS_AUTO_UPDATE=0` and update by hand from the
 **[releases page](../../releases/latest)**.
 
-## Store & support
+## Support
 
-**[structos.lemonsqueezy.com](https://structos.lemonsqueezy.com)**
+Questions or licensing (post-beta): **[open an issue](../../issues/new/choose)** or see the contact
+in `StructOS/README.txt` inside the download.
 
 <sub>New capabilities are added continuously. This repository hosts the downloads only — no source code.</sub>
